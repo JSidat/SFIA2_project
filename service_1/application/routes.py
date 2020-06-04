@@ -8,4 +8,8 @@ def home():
     response = requests.get('http://service4:5003/city_location')
     print(response)
     statement = response.text
-    return render_template('home.html', statement = statement, title='Home')
+
+    #possibly in service 4
+    db.session.add(statement)
+    db.session.commit()
+    return render_template('home.html', statement = statement, title='Home Page')

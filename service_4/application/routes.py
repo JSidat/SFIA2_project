@@ -6,5 +6,9 @@ import requests
 def city_location():
     city =  requests.get('http://service2:5001/city')
     country = requests.get('http://service3:5002/country')
-    response = city.text + 'is in ' + country.text
-    return response
+    statement = city.text + 'is in ' + country.text
+
+    #db.session.add(city.text)
+    #db.session.add(country.text)
+    #db.session.commit()
+    return statement
