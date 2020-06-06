@@ -6,4 +6,5 @@ from random import randint
 def city():
     cities = ['London', 'Paris', 'Tokyo', 'New York', 'Vaduz', 'Luxembourg City', 'Sydney', 'Moscow', 'Geneva', 'Madrid',
     'Edinburgh', 'Beijing', 'Mumbai', 'Berlin' 'Cape Town', 'Rio de Janeiro', 'Toronto']
-    return Response(cities[randint(0, len(list)-1)], mimetype= 'text/plain')
+    City = (cities[randint(0, len(list)-1)], mimetype= 'text/plain')
+    return City

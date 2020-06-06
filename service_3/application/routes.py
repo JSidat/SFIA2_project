@@ -41,4 +41,5 @@ def country():
         country = 'Canada'    
     else:
         city = 'City not recognised'
-    return Response(country, mimetype='text/plain')
+    Country = (country, mimetype='text/plain')
+    return Country
