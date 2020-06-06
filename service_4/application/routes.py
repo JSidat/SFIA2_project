@@ -8,7 +8,5 @@ def city_location():
     country = requests.get('http://service3:5002/country')
     statement = city.text + 'is in ' + country.text
 
-    #db.session.add(city.text)
-    #db.session.add(country.text)
-    #db.session.commit()
+    
     return statement
