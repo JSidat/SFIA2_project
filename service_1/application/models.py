@@ -3,5 +3,6 @@ from application import db
 
 class Location(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    city_location = db.Column(db.String(100), nullable=False)
+    city = db.Column(db.String(50), nullable=False)
+    country = db.Column(db.String(50), nullable=False)
 

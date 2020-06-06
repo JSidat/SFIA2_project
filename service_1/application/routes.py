@@ -6,7 +6,6 @@ import requests
 @app.route('/home', methods = ['GET'])
 def home():
     response = requests.get('http://service4:5003/city_location')
-    print(response)
     statement = response.text
 
     #possibly in service 4
