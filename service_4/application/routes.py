@@ -1,5 +1,5 @@
 from application import app
-from flask import request
+from flask import request, Response
 import requests
 
 
@@ -25,7 +25,6 @@ def country_fact():
         statement = 'Japan is in Asia'
     elif country == 'Japan' and topic == 'main Language':
         statement = 'The main language of Japan is Japanese'
-    statement = (statement, mimetype ='plain/text')
-    return statement
+    return Response(statement, mimetype='plain/text')
     
     
