@@ -1,14 +1,20 @@
 from flask import render_template
-from application import app
+from application import app, db
 import requests
+from applicatoin.models import Facts
 
 @app.route('/')
 @app.route('/home', methods = ['GET'])
 def home():
     response = requests.get('http://service4:5003/country_fact')
     statement = response.text
+    addstatement = Facts(
+        country_fact = statement
+    )
 
     
-    db.session.add(statement)
+    db.session.add(addstatement)
     db.session.commit()
-    return render_template('home.html', statement = statement, title='Home Page')
+    facts = Facts.query.all()
+
+    return render_template('home.html', statement = statement, posts = facts, title='Home Page')
