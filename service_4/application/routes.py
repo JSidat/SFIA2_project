@@ -27,14 +27,13 @@ def country_fact():
         statement = 'Japan is in Asia'
     elif country == 'Japan' and topic == 'main Language':
         statement = 'The main language of Japan is Japanese'
-    return statement
+    
 
     addstatement=Facts(country_fact=statement)
     db.session.add(addstatement)
     db.session.commit() 
 
-    return statement
-
+    return statement.text
     
 
 
