@@ -13,7 +13,7 @@ def country_fact():
     
     
 
-    addstatement=Facts(country_fact=response)
+    addstatement=Teams(teamname=response)
     db.session.add(addstatement)
     db.session.commit() 
 

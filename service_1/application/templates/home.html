@@ -3,17 +3,17 @@
 <html>
 	<head>			
 		<title>
-			{{ title}}
+			{{ title }}
 		</title>
     </head>
 	<body>
-		<h1>Welcome to Country Facts</h1>
+		<h1>Funny Football Team Names</h1>
 		<p>{{ result }}</p>
 		<button onclick="window.location.reload();">
-			Generate Fact
+			Generate Team Name
 		</button>
-		{% for fact in countryfact %}
-        	<h4>{{ fact.country_fact }}</h4>
+		{% for name in teamname %}
+        	<h4>{{ name.teamname }}</h4>
 		{% endfor %}
         
 	</body>
