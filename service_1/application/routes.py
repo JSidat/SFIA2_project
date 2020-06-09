@@ -1,7 +1,7 @@
 from flask import render_template
 from application import app, db
 import requests
-from applicatoin.models import Facts
+from application.models import Facts
 
 @app.route('/')
 @app.route('/home', methods = ['GET'])

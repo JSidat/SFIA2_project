@@ -1,4 +1,3 @@
-#possibly in service 4
 from application import db
 
 class Facts(db.Model):
