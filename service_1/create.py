@@ -2,5 +2,4 @@
 from application import db
 from application.models import Facts
 
-db.drop.all()
-db.create.all()
+db.create_all()
