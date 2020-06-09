@@ -1,18 +1,20 @@
 
-{% block body_content %}
-
-            {{ title }}
-    <h1>Welcome to Country Facts!</h1>
+<!DOCTYPE html>
+<html>
+	<head>			
+		<title>
+			{{ title}}
+		</title>
+    </head>
+	<body>
+		<h1>Welcome to Country Facts</h1>
+		<p>{{ result }}</p>
+		<button onclick="window.location.reload();">
+			Generate Fact
+		</button>
+		{% for fact in countryfact %}
+        	<h4>{{ fact.country_fact }}</h4>
+		{% endfor %}
         
-           
-            <p>{{statement}}</p>
-            <button onclick='window.location.reload();'>Generate statement</button>
-            
-            
-            {% for post in posts %}
-                <p><b> - Fact:</b>{{ post.country_fact }}</p>
-            {% endfor %}
-           
-       
-        
-{% endblock body_content %}
+	</body>
+</html>

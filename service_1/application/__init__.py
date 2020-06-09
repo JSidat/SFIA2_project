@@ -8,4 +8,4 @@ app.config['SQLALCHEMY_DATABASE_URI']=getenv('SFIA2_PROJECT_DB_URI')
 app.config['SECRET_KEY']=getenv('SECRET_KEY')
 db = SQLAlchemy(app)
 
-from application import routes
+from application import routes  

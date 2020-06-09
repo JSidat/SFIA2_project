@@ -1,13 +1,14 @@
 from application import app, db
-from flask import request, Response
+from flask import render_template, request, redirect, Response
 from application.models import Facts
+from random import randint
 import requests
 
 
-@app.route('/', methods = ['GET'])
+@app.route('/fact', methods = ['GET', 'POST'])
 def country_fact():
     country =  requests.get('http://service_2:5001/country').text
-    topic = requests.get('http://service_3:5002/topic').text
+    topic = requests.get('http://service_3:5002/topic').text    
     if country == 'Italy' and topic == 'population':
         statement = 'The population of Italy is 60.36 million'
     elif country == 'Italy' and topic == 'continent':
@@ -26,12 +27,21 @@ def country_fact():
         statement = 'Japan is in Asia'
     elif country == 'Japan' and topic == 'main Language':
         statement = 'The main language of Japan is Japanese'
-    return Response(statement, mimetype='plain/text')
-    
-     addstatement = Facts(
-        country_fact = statement
-    )
+    return statement
+
+    addstatement=Facts(country_fact=statement)
+    db.session.add(addstatement)
+    db.session.commit() 
+
+    return statement
 
     
-    db.session.add(addstatement)
-    db.session.commit()
+
+
+      
+    
+    
+    
+    
+    
+    

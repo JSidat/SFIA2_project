@@ -31,5 +31,8 @@ services:
         - target: 5000
           published: 5003
           protocol: tcp
+        environment:
+          SFIA2_PROJECT_DB_URI: ${SFIA2_PROJECT_DB_URI}
+          SECRET_KEY: ${SECRET_KEY}
         
 

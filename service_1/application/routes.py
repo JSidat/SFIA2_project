@@ -1,11 +1,12 @@
-from flask import render_template, request
+from flask import render_template, request, redirect, Response
 from application import app, db
 import requests
 from application.models import Facts
 
-@app.route('/')
-@app.route('/home', methods = ['GET'])
+@app.route('/', methods = ['GET'])
 def home():
-    statement = requests.get('http://service_4:5003').text   
-    facts = Facts.query.all()
-    return render_template('home.html', statement=statement, posts=facts, title='Home Page')
+    factsData = Facts.query.all()
+    response = requests.get('http://service_4:5003/fact')
+    result = response.text
+    print(result)
+    return render_template('home.html', countryfact=factsData, result=result, title='Home Page')
