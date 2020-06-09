@@ -2,9 +2,9 @@ from application import app
 from flask import request, Response
 from random import randint
 
-@app.route('/country', methods = ['GET', 'POST'])
-def country():
-    countries = ['Italy', 'Japan', 'Brazil']
+@app.route('/beginning', methods = ['GET', 'POST'])
+def beginning():
+    beginning = ['Pique', 'Boom', 'Bacuna', 'Boom']
     
-    return Response(countries[randint(0, len(countries)-1)], mimetype='text/plain')
+    return Response(beginning[randint(0, len(beginning)-1)], mimetype='text/plain')
 
