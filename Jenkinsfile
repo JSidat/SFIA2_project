@@ -10,7 +10,7 @@ pipeline {
         
         stage('Run application') {
             steps {
-                sh './Script/environment.sh'
+                sh './script/environment.sh'
                 
             }
         }
