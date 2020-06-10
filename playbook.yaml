@@ -1,32 +1,17 @@
-- hosts: all
-  become: true 
-  tasks:
-  - name: Install docker dependencies
-    apt:
-      name: "{{ item }}"
-      state: latest
-      update_cache: yes
-    with_items:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - software-properties-common
-    tags: docker
+- name: Install docker
+  hosts: servers
+  become: true
+  roles
+    - docker-installation
 
-    - name: Get docker key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntug/gpg
-        state: present
-    tags: docker
-
-    - name: Add docker packages to repository
-      apt-repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename|lower }} stable
-    tags: docker
-
-    - name: Install docker-ce
-      apt:
-        name: docker-ce
-        state: latest
-        update_cache: yes
-    tags: docker
+- name: Create docker swarm
+  hosts: swarm-manager
+  become: true
+  roles:
+    - docker-swarm-init
+  
+- name: Add worker 
+  hosts: swarm-worker
+  become: true
+  roles:
+    - docker-swarm-add-worker
