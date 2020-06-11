@@ -9,6 +9,7 @@ pipeline{
         
         stage("Ansible Setup"){
             steps{
+                sh 'bash ./script/before-installation.sh'
                 sh './script/ansible.sh'
             }
         }
