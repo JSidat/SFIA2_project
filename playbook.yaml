@@ -1,7 +1,7 @@
 - name: Install docker
   hosts: servers
   become: true
-  roles
+  roles:
     - docker-installation
 
 - name: Create docker swarm
@@ -10,7 +10,7 @@
   roles:
     - docker-swarm-init
   
-- name: Add worker 
+- name: Add worker to swarm
   hosts: swarm-worker
   become: true
   roles:
