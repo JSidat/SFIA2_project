@@ -13,7 +13,7 @@ pipeline{
                 sh './script/ansible.sh'
             }
         }
-        stage("Deploy Docker Swarm Stack"){
+        stage("Deploy Docker Swarm"){
             steps{
                 sh './script/docker.sh'
             }
