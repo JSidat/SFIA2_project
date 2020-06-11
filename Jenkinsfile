@@ -8,9 +8,16 @@ pipeline {
             }
         }
         
-        stage('Run application') {
+        stage('run ansible') {
             steps {
-                sh './script/environment.sh'
+                sh './script/before-installation.sh'
+                sh './script/ansible.sh'
+
+        stage('deploy on docker-compose'){
+            steps{
+                sh './script/docker.sh'
+            }
+        }
                 
             }
         }
