@@ -1,12 +1,19 @@
 #!/bin/bash
-sudo apt update -y
-sudo apt install python3 python3-venv python3-pip -y
-python3 -m venv venv
-source ~/bashrc
+
+#install python3 and pip
+
+apt install -y python 
+
+apt install -y python-pip
+
+# make sure ~/.local/bin exists and is on your PATH
 mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> ~/bashrc
-source ~/bashrc
+touch ~/.bashrc
+echo 'PATH=$PATH:~/.local/bin' > ~/.bashrc
+## change ownership
+sudo chown -R $(whoami):$(whoami) ~/*
+source ~/.bashrc
 ## install ansible with pip
-pip3 install --user ansible
+pip install --user ansible
 # check that ansible has been installed
 ansible --version
