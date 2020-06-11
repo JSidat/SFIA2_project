@@ -1,27 +1,21 @@
-pipeline {
+pipeline{
     agent any
-
-    stages {
-        stage('Enable all scripts to be executable') {
-            steps {
+    stages{
+        stage("Make scripts executable"){
+            steps{
                 sh 'chmod +x ./script/*'
             }
         }
         
-        stage('running ansible') {
-            steps {
-                sh './script/before-installation.sh'
+        stage("Ansible Setup"){
+            steps{
                 sh './script/ansible.sh'
-
-        stage('Deploying Docker Stack'){
-                
-                steps{
-                    sh 'chmod +x ./script/*'
-                    sh './script/docker.sh'
-                }
             }
         }
-                
+        stage("Deploy Docker Swarm Stack"){
+            steps{
+                sh './script/docker.sh'
             }
         }
     }
+}
