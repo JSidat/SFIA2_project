@@ -8,14 +8,17 @@ pipeline {
             }
         }
         
-        stage('run ansible') {
+        stage('running ansible') {
             steps {
                 sh './script/before-installation.sh'
                 sh './script/ansible.sh'
 
-        stage('deploy on docker-compose'){
-            steps{
-                sh './script/docker.sh'
+        stage('Deploying Docker Stack'){
+                
+                steps{
+                    sh 'chmod +x ./script/*'
+                    sh './script/docker.sh'
+                }
             }
         }
                 
