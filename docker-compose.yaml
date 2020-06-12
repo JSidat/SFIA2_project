@@ -2,6 +2,7 @@ version: '3.7'
 services:
     service_1:
         image: junaidsidat95/sfia2-images:service_1
+        build: ./service_1
         ports:
         - target: 5000
           published: 5000
@@ -13,6 +14,7 @@ services:
             SECRET_KEY: ${SECRET_KEY}
     service_2:
         image: junaidsidat95/sfia2-images:service_2
+        build: ./service_2
         ports:
         - target: 5000
           published: 5001
@@ -21,6 +23,7 @@ services:
           replicas: 2
     service_3:
         image: junaidsidat95/sfia2-images:service_3
+        build: ./service_3
         ports:
         - target: 5000
           published: 5002
@@ -29,6 +32,7 @@ services:
           replicas: 2
     service_4:
         image: junaidsidat95/sfia2-images:service_4
+        build: ./service_4
         ports:
         - target: 5000
           published: 5003
