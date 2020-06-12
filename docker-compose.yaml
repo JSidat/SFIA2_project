@@ -6,6 +6,8 @@ services:
         - target: 5000
           published: 5000
           protocol: tcp
+        deploy:
+          replicas: 2
         environment:
             SFIA2_PROJECT_DB_URI: ${SFIA2_PROJECT_DB_URI}
             SECRET_KEY: ${SECRET_KEY}
@@ -15,18 +17,24 @@ services:
         - target: 5000
           published: 5001
           protocol: tcp
+        deploy:
+          replicas: 2
     service_3:
         image: junaidsidat95/sfia2-images:service_3
         ports:
         - target: 5000
           published: 5002
           protocol: tcp
+        deploy:
+          replicas: 2
     service_4:
         image: junaidsidat95/sfia2-images:service_4
         ports:
         - target: 5000
           published: 5003
           protocol: tcp
+        deploy:
+          replicas: 2
         environment:
           SFIA2_PROJECT_DB_URI: ${SFIA2_PROJECT_DB_URI}
           SECRET_KEY: ${SECRET_KEY}
