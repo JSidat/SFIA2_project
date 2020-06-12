@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
  
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']=getenv(' ')
+app.config['SQLALCHEMY_DATABASE_URI']=getenv('SFIA2_PROJECT_DB_URI')
 app.config['SECRET_KEY']=getenv('SECRET_KEY')
 db = SQLAlchemy(app)
 
