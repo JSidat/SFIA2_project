@@ -46,9 +46,9 @@ class TestViews(TestBase):
 
 class TestPosts(TestBase):
 
-    def test_add_story(self):
+    def testTeam(self):
         response = self.client.post(
-            url_for('home'),
+            url_for('/')),
             data=dict(
                 teamname = 'ABCDE FC'
                 ),
