@@ -6,7 +6,7 @@ import requests
 
 
 @app.route('/teamname', methods = ['GET', 'POST'])
-def country_fact():
+def teamname():
     beginning =  requests.get('http://service_2:5001/beginning')
     ending = requests.get('http://service_3:5002/ending')
     response = beginning.text + ' ' + ending.text  
