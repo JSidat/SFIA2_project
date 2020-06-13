@@ -4,6 +4,7 @@ import requests
 from application.models import Teams
 
 @app.route('/', methods = ['GET'])
+@app.route('/home')
 def home():
     teamData = Teams.query.all()
     response = requests.get('http://service_4:5003/teamname')
