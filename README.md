@@ -86,7 +86,7 @@ The DevOps tools that were taught as in modules for this project were used toget
 
 Basic unit testing was carried out. The intention was to carry out full unit testing and integration testing and implement mock testing into the project as well. However, due to some last minute application issues, time allocated for testing was used up for debugging and fixing errors. Testing was carried out for service 2 and 3, however full testing was not achieved for services 1 and 4 as mock testing would be required to achieve adequate coverage of interactions such as get requests.
 
-![Service 1 test](https://github.com/JSidat/SFIA2_project/blob/master/screenshots/2020-06-13%20(2).png
+![Service 1 test](https://github.com/JSidat/SFIA2_project/blob/master/screenshots/2020-06-13%20(2).png)
 
 ![service 2 test](https://github.com/JSidat/SFIA2_project/blob/master/screenshots/2020-06-13.png)
 
